@@ -1,0 +1,325 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-poppins), "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
+  --font-heading: var(--font-poppins), "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-neu-base: var(--neu-base);
+  --color-neu-light: var(--neu-light);
+  --color-neu-dark: var(--neu-dark);
+  --color-neu-text: var(--neu-text);
+  --color-neu-text-soft: var(--neu-text-soft);
+  --color-neu-accent: var(--neu-accent);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  /* Neumorphism palette - light mode */
+  --neu-base: #e0e5ec;
+  --neu-light: #ffffff;
+  --neu-dark: #a3b1c6;
+  --neu-text: #2d3748;
+  --neu-text-soft: #6b7280;
+  --neu-accent: #4f7cff;
+  --neu-accent-soft: #6f93ff;
+  --neu-success: #1da1f2;
+
+  /* Neumorphic shadow tokens */
+  --neu-shadow-raised: 9px 9px 18px #b8bcc4, -9px -9px 18px #ffffff;
+  --neu-shadow-raised-sm: 5px 5px 10px #b8bcc4, -5px -5px 10px #ffffff;
+  --neu-shadow-raised-xs: 3px 3px 6px #b8bcc4, -3px -3px 6px #ffffff;
+  --neu-shadow-pressed: inset 6px 6px 12px #b8bcc4, inset -6px -6px 12px #ffffff;
+  --neu-shadow-pressed-sm: inset 3px 3px 6px #b8bcc4, inset -3px -3px 6px #ffffff;
+  --neu-shadow-flat: 4px 4px 8px #c5cad3, -4px -4px 8px #f5f7fb;
+  --neu-shadow-hover: 12px 12px 24px #b0b6bf, -12px -12px 24px #ffffff;
+
+  /* shadcn-compatible tokens (override defaults to play nice with neumorphism) */
+  --background: var(--neu-base);
+  --foreground: var(--neu-text);
+  --card: var(--neu-base);
+  --card-foreground: var(--neu-text);
+  --popover: var(--neu-base);
+  --popover-foreground: var(--neu-text);
+  --primary: var(--neu-text);
+  --primary-foreground: var(--neu-base);
+  --secondary: oklch(0.92 0.01 240);
+  --secondary-foreground: var(--neu-text);
+  --muted: oklch(0.92 0.01 240);
+  --muted-foreground: var(--neu-text-soft);
+  --accent: oklch(0.92 0.01 240);
+  --accent-foreground: var(--neu-text);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: rgba(163, 177, 198, 0.25);
+  --input: rgba(163, 177, 198, 0.3);
+  --ring: var(--neu-accent);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 1rem;
+  --sidebar: var(--neu-base);
+  --sidebar-foreground: var(--neu-text);
+  --sidebar-primary: var(--neu-text);
+  --sidebar-primary-foreground: var(--neu-base);
+  --sidebar-accent: oklch(0.92 0.01 240);
+  --sidebar-accent-foreground: var(--neu-text);
+  --sidebar-border: rgba(163, 177, 198, 0.25);
+  --sidebar-ring: var(--neu-accent);
+}
+
+.dark {
+  --neu-base: #2c3038;
+  --neu-light: #383d47;
+  --neu-dark: #1d2025;
+  --neu-text: #e6e8ec;
+  --neu-text-soft: #9aa3b2;
+  --neu-accent: #6f93ff;
+  --neu-accent-soft: #8aa9ff;
+
+  --neu-shadow-raised: 9px 9px 18px #1d2025, -9px -9px 18px #3b414c;
+  --neu-shadow-raised-sm: 5px 5px 10px #1d2025, -5px -5px 10px #3b414c;
+  --neu-shadow-raised-xs: 3px 3px 6px #1d2025, -3px -3px 6px #3b414c;
+  --neu-shadow-pressed: inset 6px 6px 12px #1d2025, inset -6px -6px 12px #3b414c;
+  --neu-shadow-pressed-sm: inset 3px 3px 6px #1d2025, inset -3px -3px 6px #3b414c;
+  --neu-shadow-flat: 4px 4px 8px #232730, -4px -4px 8px #353a44;
+  --neu-shadow-hover: 12px 12px 24px #16181c, -12px -12px 24px #3f4550;
+
+  --background: var(--neu-base);
+  --foreground: var(--neu-text);
+  --card: var(--neu-base);
+  --card-foreground: var(--neu-text);
+  --popover: var(--neu-base);
+  --popover-foreground: var(--neu-text);
+  --primary: var(--neu-text);
+  --primary-foreground: var(--neu-base);
+  --secondary: #353a44;
+  --secondary-foreground: var(--neu-text);
+  --muted: #353a44;
+  --muted-foreground: var(--neu-text-soft);
+  --accent: #353a44;
+  --accent-foreground: var(--neu-text);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: rgba(255, 255, 255, 0.06);
+  --input: rgba(255, 255, 255, 0.08);
+  --ring: var(--neu-accent);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    background: var(--neu-base);
+  }
+  body {
+    background: var(--neu-base);
+    color: var(--neu-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  ::selection {
+    background: var(--neu-accent);
+    color: #ffffff;
+  }
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--neu-base);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--neu-base);
+    border-radius: 999px;
+    box-shadow: var(--neu-shadow-pressed-sm);
+  }
+}
+
+@layer utilities {
+  .neu-raised {
+    background: var(--neu-base);
+    box-shadow: var(--neu-shadow-raised);
+    border-radius: 1.5rem;
+  }
+  .neu-raised-sm {
+    background: var(--neu-base);
+    box-shadow: var(--neu-shadow-raised-sm);
+    border-radius: 1rem;
+  }
+  .neu-raised-xs {
+    background: var(--neu-base);
+    box-shadow: var(--neu-shadow-raised-xs);
+    border-radius: 0.75rem;
+  }
+  .neu-pressed {
+    background: var(--neu-base);
+    box-shadow: var(--neu-shadow-pressed);
+    border-radius: 1.5rem;
+  }
+  .neu-pressed-sm {
+    background: var(--neu-base);
+    box-shadow: var(--neu-shadow-pressed-sm);
+    border-radius: 0.75rem;
+  }
+  .neu-flat {
+    background: var(--neu-base);
+    box-shadow: var(--neu-shadow-flat);
+  }
+  .neu-interactive {
+    background: var(--neu-base);
+    box-shadow: var(--neu-shadow-raised-sm);
+    transition: box-shadow 220ms ease, transform 220ms ease;
+  }
+  .neu-interactive:hover {
+    box-shadow: var(--neu-shadow-raised);
+  }
+  .neu-interactive:active {
+    box-shadow: var(--neu-shadow-pressed-sm);
+    transform: translateY(1px);
+  }
+  .neu-text-gradient {
+    background: linear-gradient(135deg, var(--neu-text), var(--neu-text-soft));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* Subtle entry animation reused across sections */
+@keyframes neu-fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.neu-animate-in {
+  animation: neu-fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Gallery grain hover transition */
+@keyframes gallery-grain-shift {
+  0%   { background-position: 0%   0%;   }
+  14%  { background-position: -8%  -12%; }
+  28%  { background-position: 12%   4%;  }
+  42%  { background-position: -4%  18%;  }
+  57%  { background-position: 14%  -8%;  }
+  71%  { background-position: -12% 10%;  }
+  85%  { background-position: 6%  -16%;  }
+  100% { background-position: 0%   0%;   }
+}
+
+.gallery-grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  /* SVG fractal-noise tile rendered as repeating background */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  background-repeat: repeat;
+  mix-blend-mode: overlay;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  will-change: opacity, background-position;
+  border-radius: inherit;
+}
+
+.group:hover .gallery-grain {
+  opacity: 0.55;
+  animation: gallery-grain-shift 0.35s steps(8, end) infinite;
+}
+
+/* Project card flip */
+.flip-card-inner {
+  transform-style: preserve-3d;
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-face {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+/* Certificate modal entrance */
+@keyframes cert-modal-in {
+  from { opacity: 0; transform: translateY(16px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)    scale(1); }
+}
+
+/* Typing indicator dots */
+@keyframes typing-dot {
+  0%, 60%, 100% { opacity: 0.25; transform: translateY(0); }
+  30% { opacity: 1; transform: translateY(-3px); }
+}
+
+/* Hide scrollbar on horizontal galleries while keeping scroll */
+.neu-scroll-x {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.neu-scroll-x::-webkit-scrollbar {
+  display: none;
+}
+
+/* Auto-scrolling marquee track (pairs with a duplicated item set) */
+@keyframes neu-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.neu-marquee {
+  animation: neu-marquee 30s linear infinite;
+  width: max-content;
+}
+.neu-marquee:hover {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .neu-marquee {
+    animation: none;
+  }
+}
