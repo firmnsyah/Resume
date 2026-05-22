@@ -171,8 +171,8 @@ export const projects: ProjectItem[] = [
     title: "Resume Website",
     description:
       "My Resume Website built with Next.js and hosted on Firebase, showcasing my projects, skills, and experience in a clean and modern design.",
-    linkLabel: "firmansyah-resume.web.app",
-    url: "https://firmansyah-resume.web.app/",
+    linkLabel: "firmansyah-resume.vercel.app",
+    url: "https://firmansyah-resume.vercel.app/",
     previewUrl: "/images/projects/preview-resume-dark.png",
   },
   {
