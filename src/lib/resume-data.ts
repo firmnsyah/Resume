@@ -176,13 +176,6 @@ export const projects: ProjectItem[] = [
     previewUrl: "/images/projects/preview-resume-dark.png",
   },
   {
-    title: "Madduta Invitation Website",
-    description: "A custom website for Madduta Invitation using WordPress.",
-    linkLabel: "maddutainv.com",
-    url: "https://www.maddutainv.com/",
-    previewUrl: "/images/projects/preview-madduta.png",
-  },
-  {
     title: "Data Craft",
     description:
       "Jasa professional pengolahan data, AI/ML, Pembuatan Website, dan layanan digital lainnya untuk mahasiswa, pelaku bisnis, dan individu.",
@@ -197,11 +190,6 @@ export const certifications: CertificationItem[] = [
     title: "Data Analyst in Power BI",
     issuer: "DataCamp",
     imageUrl: "/images/certs/cert-datacamp-powerbi.jpg",
-  },
-  {
-    title: "Data Analyst in Tableau",
-    issuer: "DataCamp",
-    imageUrl: "/images/certs/cert-datacamp-tableau.jpg",
   },
   {
     title: "Excel Fundamentals for Data Analyst",
@@ -222,11 +210,6 @@ export const certifications: CertificationItem[] = [
     title: "Structured Query Language (SQL) Fundamentals",
     issuer: "Dicoding Indonesia",
     imageUrl: "/images/certs/cert-dicoding-sql.png",
-  },
-  {
-    title: "Young Computer & Network Engineer",
-    issuer: "BNSP - LSP SMK Negeri 2 Pinrang",
-    imageUrl: "/images/certs/cert-bnsp.png",
   },
 ];
 
