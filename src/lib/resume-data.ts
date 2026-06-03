@@ -187,6 +187,11 @@ export const projects: ProjectItem[] = [
 
 export const certifications: CertificationItem[] = [
   {
+    title: "Apreciatiation Sertificate for Bug Hunter",
+    issuer: "CSIRT BMKG",
+    imageUrl: "/images/certs/cert-csirt-bmkg.jpg",
+  },
+  {
     title: "Data Analyst in Power BI",
     issuer: "DataCamp",
     imageUrl: "/images/certs/cert-datacamp-powerbi.jpg",
