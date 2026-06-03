@@ -13,9 +13,9 @@ export const profile: ProfileData = {
   name: "Firmansyah",
   location: "Makassar, Indonesia",
   role: "Undergraduate @Hasanuddin University | Aspiring Data & Business Intelligence Analyst",
-  portfolioLabel: "firmansyah-resume.web.app",
-  portfolioUrl: "https://firmansyah-resume.web.app/",
-  resumeUrl: "/pdf/CV_Firmansyah.pdf",
+  portfolioLabel: "github.com/firmnsyah",
+  portfolioUrl: "https://github.com/firmnsyah",
+  resumeUrl: "/pdf/CV_Firmansyah_Updated.pdf",
   email: "frmnsyh.kdr@gmail.com",
   photoSrc: "/images/profile.png",
 };
